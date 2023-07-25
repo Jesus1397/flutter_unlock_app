@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_unlock_app/services/password_api.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/deletebutton_widget.dart';
 import '../widgets/numbutton_widget.dart';
 import '../widgets/scanbutton_widget.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends ConsumerWidget {
   const LoginPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final password = ref.watch(passwordProvider);
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,21 +41,21 @@ class LoginPage extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             width: double.infinity,
             height: size.height * 0.05,
-            child: const Row(
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                DotWidget(),
-                SizedBox(width: 20),
-                DotWidget(),
-                SizedBox(width: 20),
-                DotWidget(),
-                SizedBox(width: 20),
-                DotWidget(),
-                SizedBox(width: 20),
-                DotWidget(),
-                SizedBox(width: 20),
-                DotWidget(),
+                const DotWidget(),
+                const SizedBox(width: 20),
+                const DotWidget(),
+                const SizedBox(width: 20),
+                const DotWidget(),
+                const SizedBox(width: 20),
+                const DotWidget(),
+                const SizedBox(width: 20),
+                const DotWidget(),
+                const SizedBox(width: 20),
+                const DotWidget(),
               ],
             ),
           ),

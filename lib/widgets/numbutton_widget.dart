@@ -13,7 +13,9 @@ class NumButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        print(num);
+      },
       borderRadius: BorderRadius.circular(100),
       child: Container(
         width: size.width * 0.25,
